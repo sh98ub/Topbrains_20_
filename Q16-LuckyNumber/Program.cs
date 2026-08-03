@@ -6,16 +6,30 @@ namespace Q16_LuckyNumber
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter ticket number (x): ");
-            if (long.TryParse(Console.ReadLine(), out long x))
+            string input = Console.ReadLine()!;
+            if (string.IsNullOrWhiteSpace(input)) return;
+
+            string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            if (parts.Length < 2) return;
+
+            long m = long.Parse(parts[0]);
+            long n = long.Parse(parts[1]);
+
+            int count = CountLuckyNumbers(m, n);
+            Console.WriteLine(count);
+        }
+
+        public static int CountLuckyNumbers(long m, long n)
+        {
+            int count = 0;
+            for (long i = m; i <= n; i++)
             {
-                bool isLucky = IsLuckyNumber(x);
-                Console.WriteLine($"Is {x} a Lucky Number? {isLucky}");
+                if (IsLuckyNumber(i))
+                {
+                    count++;
+                }
             }
-            else
-            {
-                Console.WriteLine("Invalid Input");
-            }
+            return count;
         }
 
         public static bool IsLuckyNumber(long x)
