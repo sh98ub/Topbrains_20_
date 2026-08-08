@@ -1,0 +1,5 @@
+2026-08-08 10:00:01 INFO Application started
+2026-08-08 10:00:05 WARN High memory usage detected
+2026-08-08 10:00:10 ERROR Failed to connect to database
+2026-08-08 10:00:15 INFO Retrying database connection
+2026-08-08 10:00:20 ERROR Connection timeout exceeded

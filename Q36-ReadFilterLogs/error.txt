@@ -1,0 +1,2 @@
+2026-08-08 10:00:10 ERROR Failed to connect to database
+2026-08-08 10:00:20 ERROR Connection timeout exceeded
